@@ -16,7 +16,7 @@ pipeline {
             steps {
 
                 withCredentials([[$class          : 'UsernamePasswordMultiBinding',
-                                  credentialsId   : 'PCF_LOGIN',
+                                  credentialsId   : 'CF_LOGIN',
                                   usernameVariable: 'USERNAME',
                                   passwordVariable: 'PASSWORD']]) {
 
