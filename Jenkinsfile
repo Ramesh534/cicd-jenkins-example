@@ -21,7 +21,7 @@ pipeline {
                                   passwordVariable: 'PASSWORD']]) {
 
                     sh '/usr/bin/cf --help'
-                    sh '/usr/bin/cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSWORD'
+                    sh '/usr/bin/cf login -a https://api.cf.eu10.hana.ondemand.com -u $USERNAME -p $PASSWORD'
                     sh '/usr/bin/cf push'
                 }
             }
