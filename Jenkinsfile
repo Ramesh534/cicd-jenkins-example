@@ -13,22 +13,6 @@ pipeline {
             }
         }
 
-        stage ('Deploy') {
-            steps {
-
-                withCredentials([[$class          : 'UsernamePasswordMultiBinding',
-                                  credentialsId   : 'Anilcloudfoundry',
-                                  usernameVariable: 'USERNAME',
-                                  passwordVariable: 'PASSWORD']]) {
-
-                    sh '/usr/bin/cf --help'
-                    sh '/usr/bin/cf login -a https://api.cf.eu10.hana.ondemand.com -u $USERNAME -p $PASSWORD'
-                    sh '/usr/bin/cf push'
-                }
-            }
-
-        }
-
     }
 
 }
